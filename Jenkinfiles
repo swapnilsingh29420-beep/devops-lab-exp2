@@ -1,0 +1,20 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building Docker image'
+                sh 'docker build -t ara-app .'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application'
+                sh 'docker run -d -p 8080:80 ara-app'
+            }
+        }
+    }
+}
