@@ -11,5 +11,5 @@ COPY hello.cpp .
 # Compile the C++ program
 RUN g++ hello.cpp -o main
 
-# Run the executable
+# Run the executable file
 CMD ["./main"]
